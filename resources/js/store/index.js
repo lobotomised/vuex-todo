@@ -20,6 +20,10 @@ export default new Vuex.Store({
             });
         },
 
+        updateBody({ todos }, { todo, value }) {
+            todos.find(item => item.body === todo.body).body = value;
+        },
+
         completeAll({ todos }) {
             todos.forEach(todo => todo.done = true);
         },
